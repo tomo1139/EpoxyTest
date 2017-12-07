@@ -1,7 +1,11 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 android {
+    dataBinding {
+        enabled = true
+    }
     compileSdkVersion 26
     defaultConfig {
         applicationId "develop.beta1139.epoxytest"
@@ -27,7 +31,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-
+    kapt "com.android.databinding:compiler:2.3.1"
     // epoxy
     compile 'com.airbnb.android:epoxy:2.2.0'
     kapt 'com.airbnb.android:epoxy-processor:2.2.0'
